@@ -1,40 +1,31 @@
-//menu
-var tombolMenu = $(".tombol-menu");
-var menu = $("nav .menu ul");
-
-function klikMenu() {
-  tombolMenu.click(function () {
-    menu.toggle();
-  });
-  menu.click(function () {
-    menu.toggle();
-  });
-}
-
 $(document).ready(function () {
-  var width = $(window).width();
-  if (width < 990) {
-    klikMenu();
-  }
-});
+  var tombolMenu = $(".tombol-menu");
+  var menu = $("nav .menu ul");
 
-//check lebar
-$(window).resize(function () {
-  var width = $(window).width();
-  if (width > 989) {
-    menu.css("display", "block");
-    //display:block
+  // Atur klik menu hanya sekali
+  tombolMenu.on("click", function () {
+    menu.slideToggle();
+  });
+
+  // Responsif awal saat load
+  if ($(window).width() > 989) {
+    menu.show();
   } else {
-    menu.css("display", "none");
+    menu.hide();
   }
-  klikMenu();
-});
 
-//efek scroll
-$(document).ready(function () {
-  var scroll_pos = 0;
+  // Responsif saat resize
+  $(window).on("resize", function () {
+    if ($(this).width() > 989) {
+      menu.show();
+    } else {
+      menu.hide();
+    }
+  });
+
+  // Efek scroll
   $(document).scroll(function () {
-    scroll_pos = $(this).scrollTop();
+    var scroll_pos = $(this).scrollTop();
     if (scroll_pos > 0) {
       $("nav").addClass("putih");
       $("nav img.hitam").show();
