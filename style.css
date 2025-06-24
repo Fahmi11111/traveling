@@ -230,8 +230,7 @@ section#gallery div img:hover {
 }
 
 section.quote {
-  background: url("travel/gambar dan video/gambar dan video/background-bromo.jpg")
-    no-repeat;
+  background: url("travel-clean/gambar/background-bromo.jpg") no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -243,8 +242,7 @@ section.quote {
 }
 section.quote .layar-dalam p {
   display: inline;
-  background: url("travel/gambar dan video/gambar dan video/quote-icon.png")
-    no-repeat;
+  background: url("travel-clean/gambar/quote-icon.png") no-repeat;
   padding: 40px;
   font-size: 20px;
 }
